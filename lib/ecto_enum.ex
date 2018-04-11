@@ -81,8 +81,8 @@ defmodule EctoEnum do
           EctoEnum.Type.cast(term, @int_atom_map, @string_atom_map)
         end
 
-        def load(int) when is_integer(int) do
-          Map.fetch(@int_atom_map, int)
+        def load(term) do
+          cast(term)
         end
 
         def dump(term) do
